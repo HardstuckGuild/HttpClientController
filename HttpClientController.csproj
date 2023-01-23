@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>10</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+		<Authors>HardstuckGuild (Plenyx)</Authors>
+		<Copyright>MIT</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Version>0.9.9</Version>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/HardstuckGuild/HttpClientController.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/HardstuckGuild/HttpClientController</PackageProjectUrl>
+		<Platforms>AnyCPU;x64</Platforms>
+		<Description>HttpClient class with additional features.</Description>
+		<Title>HttpClientController</Title>
+		<EnableNETAnalyzers>True</EnableNETAnalyzers>
+		<PackageTags>hardstuck;httpclientcontroller</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+</Project>
+
