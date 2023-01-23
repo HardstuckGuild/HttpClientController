@@ -18,6 +18,7 @@
 		<Title>HttpClientController</Title>
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<PackageTags>hardstuck;httpclientcontroller</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
