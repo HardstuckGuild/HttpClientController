@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Globalization;
+using System.Net;
 
 namespace Hardstuck.Http
 {
@@ -19,7 +20,7 @@ namespace Hardstuck.Http
         public HttpClientController()
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("HsClientController", Version.ToString("0.00")));
+            DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("HsClientController", Version.ToString("0.00", CultureInfo.InvariantCulture)));
         }
         #endregion
 
