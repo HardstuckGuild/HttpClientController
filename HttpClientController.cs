@@ -12,7 +12,7 @@ namespace Hardstuck.Http
         /// <summary>
         /// The version of the HttpClientController.
         /// </summary>
-        public static float Version => 1.00f;
+        public static float Version => 1.01f;
 
         /// <summary>
         /// Create an instance of HttpClientController, child of HttpClient.
