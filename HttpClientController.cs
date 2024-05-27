@@ -35,12 +35,14 @@ namespace Hardstuck.Http
             try
             {
                 var uri = new Uri(url);
-                using (var responseMessage = await GetAsync(uri))
+                using var responseMessage = await GetAsync(uri);
+                if (!responseMessage.IsSuccessStatusCode)
                 {
-                    using var response = await responseMessage.Content.ReadAsStreamAsync();
-                    using var stream = File.Create(@destination);
-                    await response.CopyToAsync(stream);
+                    return false;
                 }
+                using var response = await responseMessage.Content.ReadAsStreamAsync();
+                using var stream = File.Create(@destination);
+                await response.CopyToAsync(stream);
                 return true;
             }
             catch
@@ -54,17 +56,21 @@ namespace Hardstuck.Http
         /// </summary>
         /// <param name="url">URL to download from.</param>
         /// <returns>The response as a string.</returns>
-        public async Task<string> DownloadFileToStringAsync(string url)
+        public async Task<string?> DownloadFileToStringAsync(string url)
         {
             try
             {
                 var uri = new Uri(url);
                 using var responseMessage = await GetAsync(uri);
+                if (!responseMessage.IsSuccessStatusCode)
+                {
+                    return null;
+                }
                 return await responseMessage.Content.ReadAsStringAsync();
             }
             catch
             {
-                return "";
+                return null;
             }
         }
     }
